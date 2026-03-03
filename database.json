@@ -1,0 +1,73 @@
+{
+  "organization": {
+    "name": "DRIMORIA SUPPORT ORGANISATION",
+    "motto": "RESTORING HOPE, TRANSFORMING LIVES",
+    "mission": "To empower vulnerable girls and women, support orphans and provide care, protection and accommodation to street children through sustainable community initiatives.",
+    "vision": "To build a compassionate and empowered community where girls, women, orphans and street children live safe, dignified and productive lives.",
+    "contact": {
+      "phone": "+256 703 190 381",
+      "email": "badriaadam114@gmail.com",
+      "bankName": "ABSA",
+      "accountNumber": "6009779130"
+    },
+    "socialMedia": {
+      "youtube": "https://youtube.com/@drimoria4",
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com"
+    }
+  },
+  "objectives": [
+    "Empower girls and women socially, economically and emotionally",
+    "Support orphans with education, healthcare and basic needs",
+    "Provide shelter, rehabilitation and care for street children",
+    "Promote community development and self-reliance",
+    "Advocate for the rights and protection of vulnerable people",
+    "Work with partners to improve social welfare in communities"
+  ],
+  "programs": [
+    {
+      "id": 1,
+      "name": "Women Empowerment",
+      "description": "Economic and social empowerment programs for girls and women including vocational training and business support.",
+      "icon": "👩‍🎓"
+    },
+    {
+      "id": 2,
+      "name": "Education for Orphans",
+      "description": "Comprehensive educational support, scholarships, and mentoring for orphaned children to achieve their potential.",
+      "icon": "🏫"
+    },
+    {
+      "id": 3,
+      "name": "Street Children Care",
+      "description": "Safe shelter, rehabilitation, healthcare, and reintegration support for street children and youth.",
+      "icon": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Community Development",
+      "description": "Initiatives promoting self-reliance, community awareness, and sustainable development in local areas.",
+      "icon": "🤝"
+    },
+    {
+      "id": 5,
+      "name": "Rights Advocacy",
+      "description": "Advocacy for protection of vulnerable people's rights and raising community awareness on social issues.",
+      "icon": "⚖️"
+    },
+    {
+      "id": 6,
+      "name": "Partnership & Welfare",
+      "description": "Collaborating with partners to improve social welfare systems and create positive community impact.",
+      "icon": "🌍"
+    }
+  ],
+  "donations": [],
+  "inquiries": [],
+  "stats": {
+    "totalDonations": 0,
+    "totalAmount": 0,
+    "totalInquiries": 0,
+    "beneficiariesReached": 0
+  }
+}
