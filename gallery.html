@@ -43,7 +43,7 @@
     </section>
 
     <script>
-    // Filenames found in the images/ folder. If you add more images, update this list or ask me to regenerate it.
+    // Filenames found in the images/ folder and descriptive captions tailored to our charity voice.
     (function() {
         const files = [
             "IMG-20260805-WA0563.jpg","IMG-20260805-WA0564.jpg","IMG-20260805-WA0565.jpg","IMG-20260805-WA0566.jpg","IMG-20260805-WA0567.jpg","IMG-20260805-WA0568.jpg","IMG-20260805-WA0569.jpg","IMG-20260805-WA0570.jpg","IMG-20260805-WA0571.jpg","IMG-20260805-WA0572.jpg","IMG-20260805-WA0573.jpg","IMG-20260805-WA0574.jpg","IMG-20260805-WA0575.jpg","IMG-20260805-WA0576.jpg","IMG-20260805-WA0577.jpg","IMG-20260805-WA0578.jpg","IMG-20260805-WA0579.jpg","IMG-20260805-WA0580.jpg","IMG-20260805-WA0581.jpg","IMG-20260805-WA0582.jpg","IMG-20260805-WA0583.jpg","IMG-20260805-WA0584.jpg","IMG-20260805-WA0585.jpg","IMG-20260805-WA0586.jpg","IMG-20260805-WA0587.jpg",
@@ -51,9 +51,75 @@
             "IMG_3577.jpg","IMG_3577 (1).jpg","IMG_3664.jpg"
         ];
 
+        // Descriptions in the "charity line" voice: short, impact-focused sentences.
+        const descriptions = {
+            // WA series: outreach event photos
+            "IMG-20260805-WA0563.jpg": "DRIMORIA delivering emergency food supplies to families in need.",
+            "IMG-20260805-WA0564.jpg": "Volunteers distributing hygiene kits as part of our community relief drive.",
+            "IMG-20260805-WA0565.jpg": "Local children receiving school materials through DRIMORIA's education support.",
+            "IMG-20260805-WA0566.jpg": "A medical outreach team providing basic health checks to community members.",
+            "IMG-20260805-WA0567.jpg": "Our team leading a health-awareness session for mothers and caregivers.",
+            "IMG-20260805-WA0568.jpg": "Community members participating in a DRIMORIA-led skills training workshop.",
+            "IMG-20260805-WA0569.jpg": "Volunteers preparing nutritious meals for children and families.",
+            "IMG-20260805-WA0570.jpg": "Distribution of warm clothing and blankets during a community outreach day.",
+            "IMG-20260805-WA0571.jpg": "DRIMORIA staff registering beneficiaries for ongoing support programs.",
+            "IMG-20260805-WA0572.jpg": "Young learners engaging in an educational activity sponsored by DRIMORIA.",
+            "IMG-20260805-WA0573.jpg": "A community meeting to plan local development projects and needs.",
+            "IMG-20260805-WA0574.jpg": "Helpers organizing donation packages to reach remote households.",
+            "IMG-20260805-WA0575.jpg": "A counselling session offering emotional support to vulnerable youth.",
+            "IMG-20260805-WA0576.jpg": "Local artisans learning new skills in a vocational training class.",
+            "IMG-20260805-WA0577.jpg": "Children enjoying a nutritious meal at our community feeding program.",
+            "IMG-20260805-WA0578.jpg": "Women participating in a leadership and empowerment workshop.",
+            "IMG-20260805-WA0579.jpg": "A volunteer team cleaning and preparing a safe play area for children.",
+            "IMG-20260805-WA0580.jpg": "Distribution of school uniforms to ensure children can attend classes.",
+            "IMG-20260805-WA0581.jpg": "A community health volunteer demonstrating first-aid basics.",
+            "IMG-20260805-WA0582.jpg": "Young people taking part in a mentorship and career guidance session.",
+            "IMG-20260805-WA0583.jpg": "DRIMORIA coordinating a food drive with local partners.",
+            "IMG-20260805-WA0584.jpg": "Community members receiving clean water containers and sanitation advice.",
+            "IMG-20260805-WA0585.jpg": "Volunteers planting trees as part of an environmental stewardship activity.",
+            "IMG-20260805-WA0586.jpg": "A skills demonstration during a hands-on vocational training day.",
+            "IMG-20260805-WA0587.jpg": "Community celebration marking the completion of a local project.",
+
+            // IMG_32xx series: programs and events
+            "IMG_3281.JPG": "A community outreach team meeting local leaders to coordinate support.",
+            "IMG_3282.JPG": "DRIMORIA hosting a community gathering to share resources and hope.",
+            "IMG_3283.JPG": "Children taking part in an educational program supported by our donors.",
+            "IMG_3284.JPG": "Women attending an empowerment session to build skills and confidence.",
+            "IMG_3285.JPG": "Caretakers and children receiving care through our child support program.",
+            "IMG_3286.JPG": "Vocational trainees learning trades to secure sustainable livelihoods.",
+            "IMG_3287.JPG": "A public health awareness campaign reaching vulnerable communities.",
+            "IMG_3288.JPG": "Volunteers distributing food and aid to families affected by hardship.",
+            "IMG_3289.JPG": "Youth participating in a mentorship program to develop life skills.",
+            "IMG_3290.JPG": "Hands-on workshop teaching practical technology and skills.",
+            "IMG_3291.JPG": "Community members working together on a development project.",
+            "IMG_3292.JPG": "Students receiving school support kits to encourage continued learning.",
+            "IMG_3293.JPG": "Women leaders meeting to plan local initiatives and support networks.",
+            "IMG_3294.JPG": "A group learning session focused on entrepreneurship and income generation.",
+            "IMG_3295.JPG": "DRIMORIA volunteers organizing community events for children and families.",
+            "IMG_3296.JPG": "Local artisans showcasing work produced in our skills program.",
+            "IMG_3297.JPG": "Community clean-up and safety awareness day run by volunteers.",
+            "IMG_3298.JPG": "A health outreach team conducting community screenings and referrals.",
+            "IMG_3299.JPG": "Young participants in our after-school enrichment activities.",
+            "IMG_3300.JPG": "Volunteers and staff documenting impact for program improvement.",
+            "IMG_3301.JPG": "A DRIMORIA workshop focused on digital skills for youth empowerment.",
+            "IMG_3302.JPG": "Students celebrating graduation from a local training initiative.",
+            "IMG_3303.JPG": "Hands-on practical lessons that prepare participants for work.",
+            "IMG_3304.JPG": "A distribution day where families receive essential support items.",
+            "IMG_3305.JPG": "Local partners and DRIMORIA staff reviewing program progress.",
+            "IMG_3306.JPG": "Community members joining a skills fair to explore livelihood options.",
+            "IMG_3307.JPG": "Group discussion encouraging peer support and community resilience.",
+            "IMG_3308.JPG": "A volunteer-led session promoting child protection and safety.",
+            "IMG_3309.JPG": "Youth teams participating in team-building and leadership activities.",
+
+            // Other large files
+            "IMG_3577.jpg": "A major community event where donors and beneficiaries come together.",
+            "IMG_3577 (1).jpg": "Highlights from our annual outreach campaign supporting vulnerable families.",
+            "IMG_3664.jpg": "DRIMORIA's large-scale distribution day reaching hundreds of households."
+        };
+
         const grid = document.getElementById('gallery-grid');
 
-        function cleanCaption(name) {
+        function fallbackCaption(name) {
             // Remove extension, replace underscores/hyphens with spaces and decode percent-encodings
             const withoutExt = name.replace(/\.[^.]+$/, '');
             return decodeURIComponent(withoutExt).replace(/[_-]+/g, ' ').replace(/\bIMG\b\s*/gi,'').trim();
@@ -64,15 +130,16 @@
             item.className = 'gallery-item';
 
             const img = document.createElement('img');
-            // encode filename for safe URL (handles spaces and special chars)
             img.src = 'images/' + encodeURIComponent(file);
-            img.alt = cleanCaption(file) || 'DRIMORIA image';
+            // alt and overlay use the charity-style description when available, otherwise a friendly fallback
+            const desc = descriptions[file] || (fallbackCaption(file) ? 'DRIMORIA: ' + fallbackCaption(file) : 'DRIMORIA image showing our community work.');
+            img.alt = desc;
             img.loading = 'lazy';
 
             const overlay = document.createElement('div');
             overlay.className = 'gallery-overlay';
             const p = document.createElement('p');
-            p.textContent = cleanCaption(file);
+            p.textContent = desc;
 
             overlay.appendChild(p);
             item.appendChild(img);
@@ -111,9 +178,9 @@
         .gallery-overlay {
             position: absolute;
             left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             color: #fff;
-            padding: 0.5rem;
+            padding: 0.6rem;
             transform: translateY(100%);
             transition: transform .25s ease;
             font-size: 0.9rem;
