@@ -47,8 +47,8 @@
 
             <p class="gallery-intro">
                 See the impact we're making in the lives of those we serve.
-                Our gallery showcases the work, events, and success stories
-                from DRIMORIA initiatives.
+                Our gallery showcases the work, events, youth activities,
+                community programs and success stories from DRIMORIA initiatives.
             </p>
 
             <div id="gallery-grid" class="gallery-grid" aria-live="polite">
@@ -62,11 +62,9 @@
     <script>
     (function() {
 
-        /* ALL GALLERY IMAGES */
-
         const files = [
 
-            /* FOUR NEWEST IMAGES */
+            /* FOUR NEWEST YOUTH IMAGES */
 
             "IMG-20260926-WA0194.jpg",
             "IMG-20260926-WA0195.jpg",
@@ -139,11 +137,9 @@
         ];
 
 
-        /* IMAGE DESCRIPTIONS */
-
         const descriptions = {
 
-            /* FOUR NEW YOUTH IMAGES */
+            /* NEW YOUTH IMAGES */
 
             "IMG-20260926-WA0194.jpg":
                 "Youths coming together through DRIMORIA to build skills, confidence, and a brighter future.",
@@ -340,8 +336,6 @@
         };
 
 
-        /* DISPLAY GALLERY */
-
         const grid = document.getElementById('gallery-grid');
 
 
@@ -373,8 +367,6 @@
                 );
 
 
-            /* DESCRIPTION */
-
             const caption = document.createElement('div');
 
             caption.className = 'gallery-caption';
@@ -387,8 +379,6 @@
             caption.appendChild(p);
 
 
-            /* IMAGE */
-
             const img = document.createElement('img');
 
             img.src = 'images/' + encodeURIComponent(file);
@@ -397,8 +387,6 @@
 
             img.loading = 'lazy';
 
-
-            /* DESCRIPTION ABOVE IMAGE */
 
             item.appendChild(caption);
 
@@ -412,8 +400,6 @@
     </script>
 
 
-    <!-- Gallery Styling -->
-
     <style>
 
         .gallery-intro {
@@ -425,72 +411,48 @@
         }
 
 
-        /* FOUR IMAGES HORIZONTALLY */
+        /* FOUR IMAGES PER ROW ON LARGE SCREENS */
 
         .gallery-grid {
-
             display: grid;
-
             grid-template-columns: repeat(4, 1fr);
-
             gap: 1.5rem;
-
+            align-items: start;
         }
 
 
-        /* GALLERY CARD */
-
         .gallery-item {
-
             background: #ffffff;
-
             border-radius: 12px;
-
             overflow: hidden;
-
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-
         }
 
 
         /* DESCRIPTION ABOVE IMAGE */
 
         .gallery-caption {
-
             padding: 1rem;
-
             background: #ffffff;
-
         }
 
 
         .gallery-caption p {
-
             margin: 0;
-
             color: #333333;
-
             font-size: 0.95rem;
-
             line-height: 1.5;
-
             font-weight: 500;
-
         }
 
 
-        /* IMAGE */
+        /* SHOW THE COMPLETE IMAGE */
 
         .gallery-item img {
-
             display: block;
-
             width: 100%;
-
-            height: 240px;
-
-            object-fit: cover;
-
+            height: auto;
+            object-fit: contain;
         }
 
 
@@ -499,38 +461,24 @@
         @media (max-width: 1000px) {
 
             .gallery-grid {
-
                 grid-template-columns: repeat(2, 1fr);
-
                 gap: 1.2rem;
-
             }
 
         }
 
 
-        /* MOBILE PHONES */
+        /* MOBILE */
 
         @media (max-width: 600px) {
 
             .gallery-grid {
-
                 grid-template-columns: 1fr;
-
                 gap: 1.2rem;
-
-            }
-
-            .gallery-item img {
-
-                height: 250px;
-
             }
 
             .gallery-caption {
-
                 padding: 0.9rem;
-
             }
 
         }
@@ -564,21 +512,10 @@
 
                     <ul>
 
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-
-                        <li>
-                            <a href="programs.html">Programs</a>
-                        </li>
-
-                        <li>
-                            <a href="donate.html">Donate</a>
-                        </li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="donate.html">Donate</a></li>
 
                     </ul>
 
@@ -589,13 +526,9 @@
 
                     <h4>Contact</h4>
 
-                    <p>
-                        Phone: +256 703 190 381
-                    </p>
+                    <p>Phone: +256 703 190 381</p>
 
-                    <p>
-                        Email: badriaadam114@gmail.com
-                    </p>
+                    <p>Email: badriaadam114@gmail.com</p>
 
                 </div>
 
