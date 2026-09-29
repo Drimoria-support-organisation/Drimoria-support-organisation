@@ -12,6 +12,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
+
             <div class="logo">
                 <h1>DRIMORIA</h1>
                 <p class="tagline">Restoring Hope, Transforming Lives</p>
@@ -32,12 +33,14 @@
                 <span></span>
                 <span></span>
             </div>
+
         </div>
     </nav>
 
 
     <!-- Gallery Section -->
     <section class="gallery">
+
         <div class="container">
 
             <h2>Gallery</h2>
@@ -49,29 +52,30 @@
             </p>
 
             <div id="gallery-grid" class="gallery-grid" aria-live="polite">
-                <!-- Gallery images will be added automatically -->
             </div>
 
         </div>
+
     </section>
 
 
     <script>
     (function() {
 
-        /*
-         * ALL GALLERY IMAGES
-         * The four newest images are placed first.
-         */
+        /* ALL GALLERY IMAGES */
+
         const files = [
 
-            /* NEW IMAGES */
+            /* FOUR NEWEST IMAGES */
+
             "IMG-20260926-WA0194.jpg",
             "IMG-20260926-WA0195.jpg",
             "IMG-20260926-WA0196.jpg",
             "IMG-20260926-WA0203.jpg",
 
+
             /* EXISTING IMAGES */
+
             "IMG-20260805-WA0563.jpg",
             "IMG-20260805-WA0564.jpg",
             "IMG-20260805-WA0565.jpg",
@@ -131,27 +135,27 @@
             "IMG_3577.jpg",
             "IMG_3577 (1).jpg",
             "IMG_3664.jpg"
+
         ];
 
 
-        /*
-         * DESCRIPTIONS FOR EACH IMAGE
-         */
+        /* IMAGE DESCRIPTIONS */
+
         const descriptions = {
 
-            /* NEW SEPTEMBER IMAGES */
+            /* FOUR NEW YOUTH IMAGES */
 
             "IMG-20260926-WA0194.jpg":
-                "DRIMORIA community outreach and support initiative.",
+                "Youths coming together through DRIMORIA to build skills, confidence, and a brighter future.",
 
             "IMG-20260926-WA0195.jpg":
-                "DRIMORIA bringing hope and support to the community.",
+                "DRIMORIA empowering young people through community support, mentorship, and opportunity.",
 
             "IMG-20260926-WA0196.jpg":
-                "DRIMORIA working together with community members to create positive change.",
+                "Youths participating in a DRIMORIA initiative focused on teamwork, growth, and positive change.",
 
             "IMG-20260926-WA0203.jpg":
-                "A DRIMORIA community activity focused on restoring hope and transforming lives.",
+                "DRIMORIA supporting young people to discover their potential and become agents of positive change.",
 
 
             /* WA SERIES */
@@ -332,16 +336,12 @@
 
             "IMG_3664.jpg":
                 "DRIMORIA's large-scale distribution day reaching hundreds of households."
+
         };
 
 
-        /*
-         * GALLERY DISPLAY
-         *
-         * IMPORTANT:
-         * The description is deliberately added BEFORE the image.
-         * There is NO hover overlay.
-         */
+        /* DISPLAY GALLERY */
+
         const grid = document.getElementById('gallery-grid');
 
 
@@ -353,17 +353,17 @@
                 .replace(/[_-]+/g, ' ')
                 .replace(/\bIMG\b\s*/gi, '')
                 .trim();
+
         }
 
 
         files.forEach(file => {
 
-            /* Create the gallery card */
             const item = document.createElement('div');
+
             item.className = 'gallery-item';
 
 
-            /* Get description */
             const desc =
                 descriptions[file] ||
                 (
@@ -373,22 +373,22 @@
                 );
 
 
-            /*
-             * DESCRIPTION
-             * This appears ABOVE the picture.
-             */
+            /* DESCRIPTION */
+
             const caption = document.createElement('div');
+
             caption.className = 'gallery-caption';
 
+
             const p = document.createElement('p');
+
             p.textContent = desc;
 
             caption.appendChild(p);
 
 
-            /*
-             * IMAGE
-             */
+            /* IMAGE */
+
             const img = document.createElement('img');
 
             img.src = 'images/' + encodeURIComponent(file);
@@ -398,11 +398,10 @@
             img.loading = 'lazy';
 
 
-            /*
-             * Add description FIRST,
-             * then image underneath it.
-             */
+            /* DESCRIPTION ABOVE IMAGE */
+
             item.appendChild(caption);
+
             item.appendChild(img);
 
             grid.appendChild(item);
@@ -414,6 +413,7 @@
 
 
     <!-- Gallery Styling -->
+
     <style>
 
         .gallery-intro {
@@ -425,72 +425,112 @@
         }
 
 
+        /* FOUR IMAGES HORIZONTALLY */
+
         .gallery-grid {
+
             display: grid;
-            grid-template-columns: repeat(
-                auto-fill,
-                minmax(250px, 1fr)
-            );
+
+            grid-template-columns: repeat(4, 1fr);
+
             gap: 1.5rem;
+
         }
 
 
-        /*
-         * Each gallery item is now a simple card.
-         */
+        /* GALLERY CARD */
+
         .gallery-item {
+
             background: #ffffff;
+
             border-radius: 12px;
+
             overflow: hidden;
+
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
         }
 
 
-        /*
-         * DESCRIPTION ABOVE IMAGE
-         */
+        /* DESCRIPTION ABOVE IMAGE */
+
         .gallery-caption {
+
             padding: 1rem;
+
             background: #ffffff;
+
         }
 
 
         .gallery-caption p {
+
             margin: 0;
+
             color: #333333;
+
             font-size: 0.95rem;
+
             line-height: 1.5;
+
             font-weight: 500;
+
         }
 
 
-        /*
-         * IMAGE BELOW DESCRIPTION
-         */
+        /* IMAGE */
+
         .gallery-item img {
+
             display: block;
+
             width: 100%;
+
             height: 240px;
+
             object-fit: cover;
+
         }
 
 
-        /*
-         * Mobile phones
-         */
+        /* TABLETS */
+
+        @media (max-width: 1000px) {
+
+            .gallery-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 1.2rem;
+
+            }
+
+        }
+
+
+        /* MOBILE PHONES */
+
         @media (max-width: 600px) {
 
             .gallery-grid {
+
                 grid-template-columns: 1fr;
+
                 gap: 1.2rem;
+
             }
 
             .gallery-item img {
+
                 height: 250px;
+
             }
 
             .gallery-caption {
+
                 padding: 0.9rem;
+
             }
 
         }
@@ -499,6 +539,7 @@
 
 
     <!-- Footer -->
+
     <footer class="footer">
 
         <div class="container">
@@ -576,7 +617,6 @@
     </footer>
 
 
-    <!-- Main JavaScript -->
     <script src="script.js"></script>
 
 </body>
